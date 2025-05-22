@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import AddTask from './components/AddTask';
+import Task from './components/Task';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         >
           Learn React
         </a>
+        <AddTask />
+        <Task />
       </header>
     </div>
   );
