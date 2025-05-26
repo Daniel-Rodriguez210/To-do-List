@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import AddTask from './components/AddTask';
 import Task from './components/Task';
