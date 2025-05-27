@@ -14,14 +14,20 @@ mongoose.connect('mongodb://localhost:27017/todo_app', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+
 mongoose.connection.once('open', () => {
   console.log('✅ Connected to MongoDB');
 });
+
+const taskRoutes = require('./routes/tasks');
+app.use('/api/tasks', taskRoutes);
 
 // Base route (just to test it's working)
 app.get('/', (req, res) => {
   res.send('🚀 Backend is running');
 });
+
 
 // Start server
 app.listen(PORT, () => {
