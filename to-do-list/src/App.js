@@ -1,29 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import TaskList from './components/TaskList';
 import './App.css';
-import AddTask from './components/AddTask';
-import Task from './components/Task';
+
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  // Fetch tasks from backend
+  useEffect(() => {
+    fetch('http://localhost:3001/api/tasks')
+    .then((res) => res.json())
+    .then((data) => setTasks(data))
+    .then((err) => console.err('Failed to fetch tasks:', err));
+  }, []);
+
   return (
-    <>
-        <AddTask />
-        <Task />
-      
-    </>
+    <div style={{ padding: '2rem' }}>
+      <h1>📝 To-Do List</h1>
+      <TaskList tasks={tasks} />
+    </div>
   );
 }
 
 export default App;
 
-// Store all tasks in state 
-// use the useState Hook 
-// map() example 
-  // const listItems = products.map(product =>
-  //   <li key={product.id}>
-  //     {product.title}
-  //   </li>
-  // );
 
-  // return (
-  //   <ul>{listItems}</ul>
-  // )
