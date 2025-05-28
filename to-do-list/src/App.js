@@ -25,7 +25,7 @@ function App() {
     <div style={{ padding: '2rem' }}>
       <h1>📝 To-Do List</h1>
       <TaskForm onTaskAdded={fetchTasks} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} fetchTasks={fetchTasks}/>
     </div>
   );
 }

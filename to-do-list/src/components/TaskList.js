@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, fetchTasks }) {
     // Toggle completed status
     const toggleTask = async (id) => {
         try {
@@ -14,7 +14,7 @@ function TaskList({ tasks }) {
     };
 
     // Delete a task
-    const deletTask = async (id) => {
+    const deleteTask = async (id) => {
         try {
             await fetch(`http://localhost:3001/api/tasks/${id}`, {
                 method: 'DELETE',
