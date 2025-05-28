@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TaskList from './components/TaskList';
 import TaskForm from './components/TaskForm';
 import './App.css';
+import './index.css';
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>📝 To-Do List</h1>
+    <div>
+      <h1 text-3xl font-bold underline>📝 To-Do List</h1>
       <TaskForm onTaskAdded={fetchTasks} />
       <TaskList tasks={tasks} fetchTasks={fetchTasks}/>
     </div>

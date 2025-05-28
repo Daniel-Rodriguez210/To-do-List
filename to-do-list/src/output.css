@@ -1,0 +1,10 @@
+/*! tailwindcss v4.1.7 | MIT License | https://tailwindcss.com */
+.min-h-screen {
+  min-height: 100vh;
+}
+.text-center {
+  text-align: center;
+}
+.line-through {
+  text-decoration-line: line-through;
+}
