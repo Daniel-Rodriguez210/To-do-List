@@ -26,26 +26,31 @@ function TaskList({ tasks, fetchTasks }) {
     };
 
     return (
-        <div className="bg-white rounded-lg shadow p-6 max-w-sm mx-auto m-6 hover:shadow-lg">
-            <ul>
-                {tasks.map((task) => (
-                    <li key={task._id}>
-                        <span
-                            style={{
-                                textDecoration: task.completed ? 'line-through' : 'none',
-                                cursor: 'pointer',
-                            }}
-                            onClick={() => toggleTask(task._id)}
-                        >
-                            {task.title}
-                        </span>
-                        <button onClick={() => deleteTask(task._id)} style={{ marginLeft: '10px' }}>
-                            🗑️
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <>
+            {tasks.length === 0 ? (
+                <p className='text-center text-gray-500 italic mt-4'>
+                    No tasks yet. Add one above!
+                </p>
+            ) : (
+
+
+                <ul>
+                    {tasks.map((task) => (
+                        <li key={task._id} className='flex items-center justify-between p-2 border-b border-gray-200'>
+                            <span
+                                className='text-gray-700'
+                                onClick={() => toggleTask(task._id)}
+                            >
+                                {task.title}
+                            </span>
+                            <button onClick={() => deleteTask(task._id)} className='text-red-500 hover:text-red-700 transition'>
+                                🗑️
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </>
     );
 }
 
