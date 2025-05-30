@@ -13,7 +13,7 @@ function TaskForm({ onTaskAdded }) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                }, 
+                },
                 body: JSON.stringify({ title }),
             });
 
@@ -27,15 +27,18 @@ function TaskForm({ onTaskAdded }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} style={{ marginBottom: '1rem' }}>
-            <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Add a new task..."
-            />
-            <button type="submit">Add Task</button>
-        </form>
+        <div className="bg-white rounded-lg shadow p-6 max-w-sm mx-auto">
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Add a new task..."
+                    className="p-2 border rounded mb-3 m-2"
+                />
+                <button type="submit" className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Add Task</button>
+            </form>
+        </div>
     );
 }
 

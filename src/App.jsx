@@ -21,10 +21,12 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1 text-3xl font-bold underline>📝 To-Do List</h1>
+    <div className='p-8 bg-gray-400 min-h-screen'>
+      <div>
+      <h1 className="text-2xl font-bold mb-4">📝 To-Do List</h1>
       <TaskForm onTaskAdded={fetchTasks} />
       <TaskList tasks={tasks} fetchTasks={fetchTasks}/>
+      </div>
     </div>
   );
 }
