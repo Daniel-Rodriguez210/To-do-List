@@ -27,8 +27,8 @@ function TaskForm({ onTaskAdded }) {
     };
 
     return (
-        <div className="flex gap-2 mb-4">
-            <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                     type="text"
                     value={title}

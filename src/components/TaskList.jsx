@@ -36,14 +36,14 @@ function TaskList({ tasks, fetchTasks }) {
 
                 <ul>
                     {tasks.map((task) => (
-                        <li key={task._id} className='flex items-center justify-between p-2 border-b border-gray-200'>
+                        <li key={task._id} className='flex flex-col sm:flex-row sm:items-center justify-between p-2 border-b border-gray-200'>
                             <span
-                                className='text-gray-700'
+                                className='text-gray-700 cursor-pointer hover:line-through transition mb-2 sm:mb-0'
                                 onClick={() => toggleTask(task._id)}
                             >
                                 {task.title}
                             </span>
-                            <button onClick={() => deleteTask(task._id)} className='text-red-500 hover:text-red-700 transition'>
+                            <button onClick={() => deleteTask(task._id)} className='self-end sm:self-auto text-red-500 hover:text-red-700 transition'>
                                 🗑️
                             </button>
                         </li>
